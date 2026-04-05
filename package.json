@@ -1,0 +1,38 @@
+{
+  "name": "nestjs-nextjs-boilerplate",
+  "version": "1.0.0",
+  "description": "[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.",
+  "main": "index.js",
+  "scripts": {
+    "dev:ui": "cd ./client && npm run dev",
+    "start:dev": "cd ./backend && npm run start:dev",
+    "lint:ui": "cd ./client && npm run lint",
+    "preinstall": "husky install",
+    "format": "prettier --write \"backend/**/**/*.ts\" \"client/**/**/*.ts\"",
+    "check": "prettier --check \"backend/**/**/*.ts\" \"client/**/**/*.ts\"",
+    "lint:be": "cd ./backend && npm run eslint",
+    "lint:fix:be": "cd ./backend && npm run eslint:fix",
+    "precommit": "lint-staged && npm run lint:be && npm run lint:ui",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-thisalihassan:thisalihassan/nestjs-nextjs-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.42.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.3.2",
+    "husky": "^8.0.0"
+  },
+  "workspaces": [
+    "backend",
+    "client"
+  ]
+}
