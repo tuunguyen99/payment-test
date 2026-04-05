@@ -68,6 +68,7 @@
     "@types/supertest": "^2.0.11",
     "jest": "28.0.3",
     "source-map-support": "^0.5.20",
+    "sql.js": "^1.14.1",
     "supertest": "^6.3.1",
     "ts-jest": "28.0.8",
     "ts-loader": "^9.4.1",
@@ -81,16 +82,23 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "roots": [
+      "<rootDir>/src",
+      "<rootDir>/test"
+    ],
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "collectCoverageFrom": [
-      "**/*.(t|j)s"
+      "src/**/*.(t|j)s"
     ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@src/(.*)$": "<rootDir>/src/$1",
+      "^src/(.*)$": "<rootDir>/src/$1"
+    }
   },
   "main": ".eslintrc.js",
   "directories": {

@@ -1,0 +1,21 @@
+version: '3.8'
+
+# Optional: spin up a clean Postgres instance for integration tests.
+# Run with: docker compose -f docker-compose.test.yml up -d
+# Then set TEST_DB_TYPE=postgres in .env.test.
+services:
+  postgres_test:
+    image: postgres:15-alpine
+    container_name: payment_test_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: projectz_test
+    ports:
+      - '5433:5432'
+    volumes:
+      - postgres_test_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_test_data:
