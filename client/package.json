@@ -18,7 +18,7 @@
     "react-redux": "^8.0.5"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^13.0.2",
+    "@next/eslint-plugin-next": "^16.2.2",
     "@rtk-query/codegen-openapi": "^1.0.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
